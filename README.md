@@ -28,6 +28,8 @@ npx hardhat test test/test.js
 npx hardhat test test/airdrop.test.js
 ```
 
+*Check my contract at the address*
+`0xf324f824F5e6917962aDEBaC77A1c4571BaBE153`
 ## Information
 All about erc20 token https://github.com/OpenZeppelin/openzeppelin-contracts/tree/master/contracts/token/ERC20
 
