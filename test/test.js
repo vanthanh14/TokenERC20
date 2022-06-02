@@ -13,12 +13,11 @@ describe("ThanhToken Unit Test", function () {
   beforeEach(async function () {
     Token = await ethers.getContractFactory("ThanhToken");
     [owner, addr1, addr2, ...addrs] = await ethers.getSigners();
-
     hardhatToken = await Token.deploy(totalSupply);
   });
 
   describe("Testcase for Deployment", function () {
-    it("Should assign the totalSupply to the owner", async function () {
+    it("Should assign the total supply to the owner", async function () {
         const ownerBalance = await hardhatToken.balanceOf(owner.address);
         expect(await hardhatToken.totalSupply()).to.equal(ownerBalance);
     });
@@ -39,12 +38,17 @@ describe("ThanhToken Unit Test", function () {
       expect(addr2Balance).to.equal(50);
     });
 
+    // it ("Can not transfer above the amount", async function() {
+    //   await expect(hardhatToken.transfer
+    // });
+    
     // it("Shout let you give another address the approval to send on the behalf", async function () {
     //   await hardhatToken.connect(addr1).approve(owner.address, ethers.utils.parseEther("10"));
     //   await hardhatToken.transfer(addr1.address, ethers.utils.parseEther("10"));
     //   await hardhatToken.transferFrom(addr1.address, addr2.address, ethers.utils.parseEther("10"));
     // expect(await hardhatToken.balanceOf(addr2.address)).to.equal(ethers.utils.parseEther("10"));
     // });
+
     // it("Should fail if sender doesn’t have enough tokens", async function () {
     //   const initialOwnerBalance = await hardhatToken.balanceOf(owner.address);
 
